@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Garagem Abrasel</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <style>
+            body {
+                padding: 20px;
+            }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <h1 class="titulo-principal">Garagem Abrasel</h1>
+        <h2 class="subtitulo">Cadastro de Veículos</h2>
+        <h3 class="subtitulo2">Carro</h3>
+        <form id="carroForm">
+            <div class="form-group">
+                <label for="modeloCarro">Modelo:</label>
+                <input type="text" class="form-control" id="modeloCarro" name="modeloCarro" required>
+            </div>
+            <div class="form-group">
+                <label for="anoCarro">Ano de Fabricação:</label>
+                <input type="text" class="form-control" id="anoCarro" name="anoCarro" required>
+            </div>
+            <div class="form-group">
+                <label for="marcaCarro">Marca:</label>
+                <input type="text" class="form-control" id="marcaCarro" name="marcaCarro" required>
+            </div>
+            <div class="form-group">
+                <label for="qtdPortasCarro">Quantidade de Portas (entre 2 e 4):</label>
+                <input type="number" class="form-control" id="qtdPortasCarro" name="qtdPortasCarro" min="2" max="4" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar Carro</button>
+            <p id="carroMessage"></p>
+        </form>
+        <hr>
+        <h3 class="subtitulo2">Moto</h3>
+        <form id="motoForm">
+            <div class="form-group">
+                <label for="modeloMoto">Modelo:</label>
+                <input type="text" class="form-control" id="modeloMoto" name="modeloMoto" required>
+            </div>
+            <div class="form-group">
+                <label for="anoMoto">Ano de Fabricação:</label>
+                <input type="text" class="form-control" id="anoMoto" name="anoMoto" required>
+            </div>
+            <div class="form-group">
+                <label for="marcaMoto">Marca:</label>
+                <input type="text" class="form-control" id="marcaMoto" name="marcaMoto" required>
+            </div>
+            <div class="form-group">
+                <label for="qtdPassageirosMoto">Quantidade de Passageiros (entre 1 e 2):</label>
+                <input type="number" class="form-control" id="qtdPassageirosMoto" name="qtdPassageirosMoto" min="1" max="2" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar Moto</button>
+            <p id="motoMessage"></p>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+    // Função AJAX para envio dos dados (mantida igual à versão anterior)
+    function cadastrarVeiculo(tipoVeiculo, formId, messageId) {
+        $.ajax({
+            type: 'POST',
+            url: `/cadastrar_${tipoVeiculo}`,
+            data: $(formId).serialize(),
+            success: function (data) {
+                $(messageId).text(data.message);
+                if (data.success) {
+                    $(formId)[0].reset();
+                }
+            },
+            error: function (error) {
+                console.error('Erro ao enviar requisição AJAX:', error);
+            }
+        });
+    }
+
+    // Lidar com o envio do formulário de carro
+    $('#carroForm').submit(function (event) {
+        event.preventDefault();
+        cadastrarVeiculo('carro', '#carroForm', '#carroMessage');
+    });
+
+    // Lidar com o envio do formulário de moto
+    $('#motoForm').submit(function (event) {
+        event.preventDefault();
+        cadastrarVeiculo('moto', '#motoForm', '#motoMessage');
+    });
+});
+
+</script>
+</body>
+</html>

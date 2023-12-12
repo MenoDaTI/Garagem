@@ -1,0 +1,20 @@
+[
+  {
+    "modelo": "Ford Ranger",
+    "ano_fabricacao": "2019",
+    "qtd_portas": 4,
+    "marca": "Ford"
+  },
+  {
+    "modelo": "Ford Ka",
+    "ano_fabricacao": "2002",
+    "qtd_portas": 2,
+    "marca": "Ford"
+  },
+  {
+    "modelo": "Ford Ranger",
+    "ano_fabricacao": "2002",
+    "qtd_portas": 4,
+    "marca": "Ford"
+  }
+]

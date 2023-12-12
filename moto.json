@@ -1,0 +1,26 @@
+[
+  {
+    "modelo": "CG 160",
+    "ano_fabricacao": "2018",
+    "qtd_portas": 0,
+    "marca": "Honda",
+    "rodas": 2,
+    "passageiros": 2
+  },
+  {
+    "modelo": "CG 125",
+    "ano_fabricacao": "2008",
+    "qtd_portas": 0,
+    "marca": "Honda",
+    "rodas": 2,
+    "passageiros": 2
+  },
+  {
+    "modelo": "CG 160",
+    "ano_fabricacao": "2008",
+    "qtd_portas": 0,
+    "marca": "Honda",
+    "rodas": 2,
+    "passageiros": 2
+  }
+]

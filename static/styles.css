@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: auto;
+    background-image:repeating-radial-gradient( rgb(102, 241, 102), rgb(177, 255, 177) , rgb(23, 235, 23));
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.titulo-principal {
+    font-size: 2.5em;
+    color: #000000; /* Cor principal do título */
+    text-align:center;
+}
+
+.subtitulo {
+    font-size: 1.8em;
+    color: #666; /* Cor secundária para subtítulos */
+    text-align: center;
+}
+.subtitulo2 {
+    font-size: 1.8em;
+    color: #5f5f5f;
+     /* Cor secundária para subtítulos */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #28a745; /* Cor verde para botões principais */
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Cor verde mais escura ao passar o mouse */
+    border-color: #1e7e34;
+}
+
+/* Adicione estilos adicionais conforme necessário */
